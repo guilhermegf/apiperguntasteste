@@ -105,10 +105,10 @@ app.get('/perguntas/:id', async (req, res) => {
 });
 
 app.post('/perguntas', async (req, res) => {
-  const { pergunta, resposta1, resposta2, resposta3, resposta4, resposta5, alternativacorreta } = req.body;
-  const sql = `INSERT INTO perguntas (pergunta, resposta1, resposta2, resposta3, resposta4, resposta5, alternativacorreta) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+  const { pergunta, resposta1, resposta2, resposta3, resposta4, alternativacorreta } = req.body;
+  const sql = `INSERT INTO perguntas (pergunta, resposta1, resposta2, resposta3, resposta4, resposta4, alternativacorreta) VALUES (?, ?, ?, ?, ?, ?, ?)`;
   try {
-    await query(sql, [pergunta, resposta1, resposta2, resposta3, resposta4, resposta5, alternativacorreta], (error, results, fields) => {
+    await query(sql, [pergunta, resposta1, resposta2, resposta3, resposta4, resposta4, alternativacorreta], (error, results, fields) => {
       if (error) {
         console.error(error);
         res.status(500).send('Erro interno do servidor 1');
@@ -126,10 +126,10 @@ app.post('/perguntas', async (req, res) => {
 
 // PUT /perguntas/:id - Atualiza uma pergunta existente
 app.put('/perguntas/:id', async (req, res) => {
-  const { pergunta, resposta1, resposta2, resposta3, resposta4, resposta5, alternativacorreta } = req.body;
-  const sql = `UPDATE perguntas SET pergunta=?, resposta1=?, resposta2=?, resposta3=?, resposta4=?, resposta5=?, alternativacorreta=? WHERE id=?`;
+  const { pergunta, resposta1, resposta2, resposta3, resposta4, alternativacorreta } = req.body;
+  const sql = `UPDATE perguntas SET pergunta=?, resposta1=?, resposta2=?, resposta3=?, resposta4=?, resposta4=?, alternativacorreta=? WHERE id=?`;
   try {
-    const results = await query(sql, [pergunta, resposta1, resposta2, resposta3, resposta4, resposta5, alternativacorreta, req.params.id]);
+    const results = await query(sql, [pergunta, resposta1, resposta2, resposta3, resposta4, resposta4, alternativacorreta, req.params.id]);
     res.send('Pergunta atualizada com sucesso!');
   } catch (err) {
     console.error(err);
