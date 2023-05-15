@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = 8080; // Porta em que a API vai rodar
+const port = 3000; // Porta em que a API vai rodar
 
 const pool = mysql.createPool({
   host: 'programadordesistemas.mysql.database.azure.com',
