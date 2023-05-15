@@ -106,7 +106,7 @@ app.get('/perguntas/:id', async (req, res) => {
 
 app.post('/perguntas', async (req, res) => {
   const { pergunta, resposta1, resposta2, resposta3, resposta4, alternativacorreta } = req.body;
-  const sql = `INSERT INTO perguntas (pergunta, resposta1, resposta2, resposta3, resposta4, resposta4, alternativacorreta) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+  const sql = `INSERT INTO perguntas (pergunta, resposta1, resposta2, resposta3, resposta4, resposta5, alternativacorreta) VALUES (?, ?, ?, ?, ?, ?, ?)`;
   try {
     await query(sql, [pergunta, resposta1, resposta2, resposta3, resposta4, resposta4, alternativacorreta], (error, results, fields) => {
       if (error) {
