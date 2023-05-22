@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = 8080; // Porta em que a API vai rodar
+const port = 8080; 
 
 const pool = mysql.createPool({
   host: 'programadordesistemas.mysql.database.azure.com',
@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
   res.send('Alô mundo!');
 });
 
+// rota para todas as perguntas
 app.get('/perguntas', async (req, res) => {
   try {
     const rows = await query('SELECT * FROM perguntas');
