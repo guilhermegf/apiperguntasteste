@@ -7,8 +7,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = 8080; 
+const port = 3000; 
 
+// Conexão com banco de dados na nuvem Azure
 const pool = mysql.createPool({
   host: 'programadordesistemas.mysql.database.azure.com',
   user: 'usuario_quiz',
@@ -47,6 +48,7 @@ app.get('/perguntas', async (req, res) => {
   }
 });
 
+// Rotas para todas as perguntas, formatado para área de administração do aplicativo
 app.get('/perguntas_administracao', async (req, res) => {
   try {
     const rows = await query('SELECT * FROM perguntas');
@@ -69,6 +71,7 @@ app.get('/perguntas_administracao', async (req, res) => {
   }
 });
 
+// Rota para todos os usuários
 app.get('/usuarios', async (req, res) => {
   try {
     const rows = await query('SELECT * FROM usuarios');
@@ -94,6 +97,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
+// Rota para consulta por pergunta pelo id
 app.get('/perguntas/:id', async (req, res) => {
   const id = req.params.id;
   try {
@@ -123,8 +127,6 @@ app.post('/perguntas', async (req, res) => {
   }
 });
 
-
-
 // PUT /perguntas/:id - Atualiza uma pergunta existente
 app.put('/perguntas/:id', async (req, res) => {
   const { pergunta, resposta1, resposta2, resposta3, resposta4, alternativacorreta } = req.body;
@@ -149,11 +151,10 @@ app.delete('/perguntas/:id', async (req, res) => {
     res.status(500).send('Erro ao excluir pergunta');
   }
 });
-
   
-// Inicia o servidor na porta 3000
+// Inicia o servidor na porta especificada
 app.listen(port, () => {
-  console.log('Servidor iniciado na porta 3000');
+  console.log('Servidor iniciado na porta '+port);
 });
 
   
