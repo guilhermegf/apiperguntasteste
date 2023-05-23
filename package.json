@@ -1,10 +1,10 @@
 {
-  "name": "apiperguntas",
-  "version": "1.0.0",
-  "description": "uma api para quiz em flutter",
+  "name": "API Perguntas",
+  "version": "0.0.1",
+  "description": "API de perguntas e respostas para um aplicativo de quiz, desenvolvida em Node.js com Express.",
   "main": "index.js",
   "author": "",
-  "license": "ISC",
+  "license": "Creative Commons Attribution 4.0 International",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
