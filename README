@@ -41,4 +41,4 @@ body-parser: Middleware para fazer o parsing dos dados recebidos no corpo das re
 Certifique-se de ter essas dependências instaladas corretamente antes de executar a API.
 
 Licença
-Este projeto está licenciado sob a licença Creative Commons Attribution 4.0 International. Consulte o arquivo LICENSE para obter mais informações.
+Este projeto está licenciado sob a licença Creative Commons Attribution 4.0 International.
