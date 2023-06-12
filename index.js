@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = 3000; 
+const port = process.env.PORT || 3000
 
 // Conexão com banco de dados na nuvem Azure
 const pool = mysql.createPool({
