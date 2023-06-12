@@ -1,5 +1,5 @@
 {
-  "name": "API Perguntas",
+  "name": "API-Perguntas",
   "version": "1.0.0",
   "description": "API de perguntas e respostas para um aplicativo de quiz, desenvolvida em Node.js com Express.",
   "main": "index.js",
